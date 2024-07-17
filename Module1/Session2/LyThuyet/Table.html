@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="../Image/taco.png" type="image/x-icon">
 </head>
+
 <body>
-    
+    <!-- 
+        Table là bảng
+        - Cách tạo bảng cấu trúc gồm
+            + thead: Đầu bảng
+            + tbody: Nội dung bảng
+            + tfoot: Cuối bảng
+        - Các thẻ hay dùng trong bảng
+            + tr: Tạo dòng mới cho bảng
+            + td: Tạo cột mới cho bảng
+            + th: Thường dùng cho thead (Cho chữ đậm và tự động căn giữa)
+            + caption: Tiêu đề của bảng
+        - Các thuộc tính (property) trong bảng
+            + border: Thêm viền cho bảng
+            + cellpadding: Khoảng cách từ text đến viền của bảng
+            + cellspacing: Khoảng cách giữa các cột và ô
+            + bgcolor: Màu nền cho bảng
+            + bordercolor: Màu cho đường viền
+            + colspan: Gộp các cột lại với nhau
+            + rowspan: Gộp các dòng lại với nhau
+    -->
+    <table border="2" bgcolor="violet" cellpadding="10" cellspacing="5" bordercolor="red">
+        <caption>Quản lý học sinh</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên lớp</th>
+                <th>Mã lớp học</th>
+                <th>Khoá học</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Java</td>
+                <td>JV11072024</td>
+                <td>Lập trình Java</td>
+            </tr>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Tổng số học sinh: </td>
+                <td>4</td>
+            </tr>
+        </tfoot>
+    </table>
 </body>
+
 </html>

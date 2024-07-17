@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Bảng Nâng Cao</title>
+    <style>
+        #chessBoard tr td,
+        #tbody tr th {
+            border: 1px black solid;
+        }
+
+        #sunColor {
+            color: red;
+        }
+
+        #satColor, caption {
+            color: blue;
+        }
+
+        sub {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Bàn Cờ Vua</h2>
+    <table id="chessBoard" cellspacing="0" border="0" width="400" height="400">
+        <tr>
+            <th></th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+        </tr>
+        <tr>
+            <th>A</th>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+        </tr>
+        <tr>
+            <th>B</th>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>C</th>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+        </tr>
+        <tr>
+            <th>D</th>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>E</th>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+        </tr>
+        <tr>
+            <th>F</th>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>G</th>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+        </tr>
+        <tr>
+            <th>H</th>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+            <td bgcolor="black"></td>
+            <td></td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Bảng Lịch</h2>
+    <table cellpadding="10" cellspacing="1">
+        <thead>
+            <caption>
+                <h1>Tháng 10 - October</h1>
+            </caption>
+            <tr style="color: white">
+                <th bgcolor="red">C.Nhật</th>
+                <th bgcolor="orange">T.Hai</th>
+                <th bgcolor="orange">T.Ba</th>
+                <th bgcolor="orange">T.Tư</th>
+                <th bgcolor="orange">T.Năm</th>
+                <th bgcolor="orange">T.Sáu</th>
+                <th bgcolor="blue">T.Bảy</th>
+            </tr>
+            <tr align="center">
+                <td style="color: red">Sun</td>
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thu</td>
+                <td>Fri</td>
+                <td style="color: blue">Sat</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>1 <sub>13</sub></th>
+                <th>2 <sub>14</sub></th>
+                <th id="satColor">3 <sub>15</sub></th>
+
+            </tr>
+            <tr>
+                <th id="sunColor">4 <sub>16</sub></th>
+                <th>5 <sub>17</sub></th>
+                <th>6 <sub>18</sub></th>
+                <th>7 <sub>19</sub></th>
+                <th>8 <sub>20</sub></th>
+                <th>9 <sub>21</sub></th>
+                <th id="satColor">10 <sub>22</sub></th>
+
+            </tr>
+            <tr>
+                <th id="sunColor">11 <sub>23</sub></th>
+                <th>12 <sub>24</sub></th>
+                <th>13 <sub>25</sub></th>
+                <th>14 <sub>26</sub></th>
+                <th>15 <sub>27</sub></th>
+                <th>16 <sub>28</sub></th>
+                <th id="satColor">17 <sub>29</sub></th>
+
+            </tr>
+            <tr>
+                <th id="sunColor">18 <sub>1.9</sub></th>
+                <th>19 <sub>2</sub></th>
+                <th>20 <sub>3</sub></th>
+                <th>21 <sub>4</sub></th>
+                <th>22 <sub>5</sub></th>
+                <th>23 <sub>6</sub></th>
+                <th id="satColor">24 <sub>7</sub></th>
+
+            </tr>
+            <tr>
+                <th id="sunColor">25 <sub>8</sub></th>
+                <th>26 <sub>9</sub></th>
+                <th>27 <sub>10</sub></th>
+                <th>28 <sub>11</sub></th>
+                <th>29 <sub>12</sub></th>
+                <th>30 <sub>13</sub></th>
+                <th id="satColor">31 <sub>14</sub></th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
