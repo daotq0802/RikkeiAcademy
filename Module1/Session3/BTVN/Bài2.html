@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Form Lấy Survey Khách Hàng</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Market Research Survey</h1>
+        <p>Please take a few moments to complete this satisfactions survey.</p>
+    </header>
+
+    <main>
+        <form id="form3">
+            <strong>What is your age range?</strong>
+            <select>
+                <option>18 ~ 24</option>
+                <option>24 ~ 54</option>
+                <option>54 ~ </option>
+            </select>
+            <strong>What is your yearly income range?</strong>
+            <select>
+                <option>$0 ~ $25,000</option>
+                <option>$25,000 ~ $50,000</option>
+                <option>$50,000 ~ </option>
+            </select>
+            <strong>Gender Identity</strong>
+            <section id="sect1">
+                <input type="radio" name="gender" id="male"><label for="male">Male</label><br>
+                <input type="radio" name="gender" id="female"><label for="female">Female</label><br>
+                <input type="radio" name="gender" id="nonbinary"><label for="nonbinary">Nonbinary</label><br>
+                <input type="radio" name="gender" id="other"><label for="other">Other</label><br>
+                <input type="text" disabled id="otherText">
+            </section>
+            <strong>Which of the following products have your purchased in the last 2 months. Please check all that
+                apply.</strong>
+            <section id="sect2">
+                <input type="checkbox" id="prd1"><label for="prd1">Product 1</label><br>
+                <input type="checkbox" id="prd2"><label for="prd2">Product 2</label><br>
+                <input type="checkbox" id="prd3"><label for="prd3">Product 3</label><br>
+            </section>
+            <strong>How often would you use our new product?</strong>
+            <section id="sect3">
+                <input type="radio" name="often" id="daily"><label for="daily">Daily</label><br>
+                <input type="radio" name="often" id="weekly"><label for="weekly">Weekly</label><br>
+                <input type="radio" name="often" id="monthly"><label for="monthly">Monthl</label><br>
+            </section>
+            <strong>What would you pay for the new product</strong>
+            <section id="sect4">
+                <span>$</span>
+                <input type="text" id="textDollars">
+                <span> - </span>
+                <input type="text" id="textCents"><br>
+                <span id="dollars">Dollars</span>
+                <span id="cents">Cents</span>
+            </section>
+            <strong>What features would you like to see in the new product</strong>
+            <textarea rows="10"></textarea>
+            <p>Please rate your level of agreement with the following statements.</p>
+            <table cellpadding="10" cellspacing="0" width="100%">
+                <tr bgcolor="silver">
+                    <th id="firstCol"></th>
+                    <th>Strongly Disagree</th>
+                    <th>Disagree</th>
+                    <th>Agree</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr>
+                    <th id="firstCol">Our products are priced fairly.</th>
+                    <td><input type="radio" name="price"><br>1</td>
+                    <td><input type="radio" name="price"><br>2</td>
+                    <td><input type="radio" name="price"><br>3</td>
+                    <td><input type="radio" name="price"><br>4</td>
+                </tr>
+                <tr bgcolor="whitesmoke">
+                    <th id="firstCol">Our products are high quality.</th>
+                    <td><input type="radio" name="quality"><br>1</td>
+                    <td><input type="radio" name="quality"><br>2</td>
+                    <td><input type="radio" name="quality"><br>3</td>
+                    <td><input type="radio" name="quality"><br>4</td>
+                </tr>
+                <tr>
+                    <th id="firstCol">You would recommend our product to a friend or coworker.</th>
+                    <td><input type="radio" name="recommend"><br>1</td>
+                    <td><input type="radio" name="recommend"><br>2</td>
+                    <td><input type="radio" name="recommend"><br>3</td>
+                    <td><input type="radio" name="recommend"><br>4</td>
+                </tr>
+            </table>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+
+</html>
