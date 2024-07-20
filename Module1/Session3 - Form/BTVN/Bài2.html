@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tạo Form Lấy Survey Khách Hàng</title>
     <link rel="stylesheet" href="Style.css">
+    <script>
+        function autoFocus() {
+            var txtOther = document.getElementById("otherText");
+            var valueRadio = document.getElementsByName('gender');
+            var checkedRadio = Array.from(valueRadio).find(
+                (radio) => radio.checked
+            );
+            if (checkedRadio.value == 2) {
+                txtOther.disabled = false
+                txtOther.focus()
+            } else {
+                txtOther.value = ""
+                txtOther.disabled = true
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -30,10 +46,14 @@
             </select>
             <strong>Gender Identity</strong>
             <section id="sect1">
-                <input type="radio" name="gender" id="male"><label for="male">Male</label><br>
-                <input type="radio" name="gender" id="female"><label for="female">Female</label><br>
-                <input type="radio" name="gender" id="nonbinary"><label for="nonbinary">Nonbinary</label><br>
-                <input type="radio" name="gender" id="other"><label for="other">Other</label><br>
+                <input type="radio" name="gender" id="male" onclick="autoFocus()" value="1"><label
+                    for="male">Male</label><br>
+                <input type="radio" name="gender" id="female" onclick="autoFocus()" value="1"><label
+                    for="female">Female</label><br>
+                <input type="radio" name="gender" id="nonbinary" onclick="autoFocus()" value="1"><label
+                    for="nonbinary">Nonbinary</label><br>
+                <input type="radio" name="gender" id="other" onclick="autoFocus()" value="2"><label
+                    for="other">Other</label><br>
                 <input type="text" disabled id="otherText">
             </section>
             <strong>Which of the following products have your purchased in the last 2 months. Please check all that
