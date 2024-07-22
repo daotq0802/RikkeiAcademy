@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Bài 1 */
+#bai1 {
+    padding: 5%;
+}
+
+#bai1 span {
+    background-color: rgb(240, 246, 125);
+    display: block;
+    margin-left: -5%;
+    padding: 5%;
+}
+
+/* Bài 2 */
+#bai2 {
+    padding: 2%;
+    background-color: rgb(237, 239, 221);
+    text-align: justify;
+}
+
+#bai2 a {
+    color: blue;
+}
+
+#bai2 p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Bài 3 */
+#bai3 {
+    width: 100%
+}
+#bai3 table tr th{
+    width: 50%;
+}
+#bai3 table tr th{
+    border-radius: 5px;
+}
+/* Bài 4 */
+#bai4 {
+    padding: 3%;
+    text-align: justify;
+}
+
+#bai4 h3 {
+    color: blue;
+}
+
+#bai4 div {
+    background-color: antiquewhite;
+    padding: 2%;
+    border-left: 7px solid rgb(221, 218, 37);
+}
+
+/* Bài 5 */
+#bai5 {
+    margin-left: 7%;
+    padding: 3%;
+    text-align: center;
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#bai5 img {
+    width: 100%
+}
+
+/* Bài 6 */
+#bai6 {
+    padding: 3%;
+}
+
+#bai6 p span {
+    color: red;
+}
+
+#bai6 #sampleBox {
+    border: 2px solid green;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#bai6 #explainBox {
+    padding: 2%;
+    background-color: rgb(233, 229, 229);
+}
+
+#bai6 #explainBox div {
+    padding: 10px;
+    background-color: white;
+    border-left: 3px solid rgb(27, 191, 197);
+}
+
+#bai6 #explainBox div #headP {
+    color: rgb(177, 28, 28);
+    margin: 0;
+}
+
+#bai6 #explainBox p {
+    display: inline-block;
+    margin-left: 15px;
+    color: red;
+    padding-top: 5px;
+}
+
+#bai6 #explainBox #blueText {
+    color: blue;
+    margin-left: 0;
+}
+
+#bai6 #explainBox button {
+    height: 40px;
+    background-color: rgb(10, 158, 102);
+    color: white;
+    width: 150px;
+    border-radius: 7px;
+    border: none;
+}
+
+#bai6 #explainBox button span {
+    font-size: 10px;
+    display: inline-block;
+}
+
+/* Bài 7 */
+
+#bai7 #main {
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    border: 1px double silver;
+    border-radius: 5px;
+}
+
+#bai7 #main>p {
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(222, 224, 226);
+    border: 1px solid rgb(157, 152, 152);
+}
+
+#bai7 #main div {
+    padding: 10px 0 10px 0;
+    border-left: 1px solid rgb(157, 152, 152);
+    border-right: 1px solid rgb(157, 152, 152);
+}
+
+#bai7 #main div * {
+    padding: 5px;
+}
+
+#bai7 button {
+    background-color: rgb(58, 162, 241);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Bài 9 */
+#bai9 {
+    padding: 2%;
+    width: 50%;
+    margin-left: 23%;
+}
+
+/* Bài 10 */
+#bai10 {
+    width: 40%;
+    margin-left: 30%;
+}
+
+#bai10 form {
+    font-size: 18px;
+}
+
+#bai10 #spanPayment {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#bai10 #divCheckbox {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-top: 1px solid rgb(230, 230, 230);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#bai10 #divCvv {
+    margin-top: 20px;
+
+}
+
+#bai10 #divCvv div {
+    width: 25%;
+}
+
+#bai10 #divButton {
+    width: 100%;
+    border-top: 1px solid rgb(230, 230, 230);
+    padding-top: 15px;
+    display: block;
+}
+
+#bai10 button {
+    width: 100%;
+}

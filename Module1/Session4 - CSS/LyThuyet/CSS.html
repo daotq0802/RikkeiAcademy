@@ -5,10 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        h2 {
+            color: green;
+        }
+    </style>
 </head>
 
 <body>
-
+    <!-- 
+        CSS là gì:
+            - Viết tắt của từ Cascading Style Sheet (Ngôn ngữ làm đẹp cho trang web)
+            - Khi viết file css thì đuôi phải .css
+            - Có 3 cách để nhúng CSS vào trang web
+                + Cách 1: Inline -> Viết CSS trực tiếp vào thẻ tag (element) luôn.
+                + Cách 2: Internal -> Viết CSS bên trong thẻ style và thẻ style nên đặt ở trong phần head.
+                + Cách 3: External -> Viết CSS bên trong file có đuôi .css
+            - Ưu và nhược điểm:
+                1/ Nhanh nhưng khi code nhiều nhìn sẽ bị rối
+                2/ Cấu trúc gọn gàng hơn nhưng chỉ một mình file html chứa nó dùng được thôi
+                3/ Viết code CSS rõ ràng, dễ mentain (chỉnh sửa) và có thể cho các file html khác dùng chung CSS được
+                ===> Hạn chế sử dụng inline và internal.
+        • Nhúng được CSS vào trang web
+        • Sử dụng được CSS selector
+            - Định danh cho các element bằng 'class' và 'id'
+            - Mức độ ưu tiên trong CSS từ thấp đến cao
+                element ==> class ==> id ==> !important
+        • Sử dụng được CSS để tuỳ chỉnh văn bản
+            - Bộ thuộc tính text color:
+                + Đặt theo tên tiếng anh (red, green, blue,...)
+                + Theo RGB (Phối hợp giữa 3 màu: red, green, blue)
+                + Theo RGBA (Red, green, blue, alpha)
+                + Theo HSL (Hue, saturation, lightness)
+                + Theo HSLA (Hue, saturation, lightness, alpha)
+                + Theo màu Hexa
+            - Bộ thuộc tính font cho text:
+                + font-size: Kích cỡ của text
+                + font-weight: Độ dày của text
+                + font-family: Kiểu chữ
+            - Bộ thuộc tính căn chỉnh text:
+                + text-align: Căn chỉnh vị trí của text
+                + text-decoration: Bỏ gạch chân
+                + text-tranform: Viết hoa, thường, hoa chữ cái đầu của text
+            - Bộ thuộc tính về background:
+                + background-color: Màu nền
+                + background-image: Nền là hình ảnh
+                + background-size: Độ rộng ảnh nền
+                + background-repeat: Ảnh nền lặp lại (On/Off)
+            - Bộ thuộc tính display:
+                + none: Biến mất
+                + block: như các thẻ mặc định h1, p, div,...
+                + inline: như các thẻ mặc định span, a, image
+                + inline-block: hiển thị dưới dạng inline, nhưng mang thuộc tính của block
+        • Giải thích được Box Model
+        • Trình bày được mô hình hộp (box model) trong CSS
+            - Content: Nội dung của box
+            - Padding: Khoảng cách từ border tới content
+            - Margin: Khoảng cách giữa các element
+            - Border: Độ dày của viền
+        • Sử dụng được CSS để điều chỉnh kích thước các thành phần
+        • Sử dụng được CSS tạo layout đơn giản
+    -->
+    <h1 style="color: red">CSS Basic!</h1>
+    <h2>CSS Internal!</h2>
+    <h3>CSS External!</h3>
 </body>
 
 </html>

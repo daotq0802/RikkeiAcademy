@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nhúng CSS Vào Trang HTML</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        #blue {
+            color: blue;
+        }
+
+        #red {
+            color: red;
+        }
+    </style>
 </head>
-<body>
-    <h1>What is CSS?</h1>
-    <p>Cascading Style Sheet (CSS) is used to format the layout of a webpage</p>
+
+<body id="bai1">
+    <h1 style="color: yellow;">What is CSS?</h1><br>
+    <p id="blue">Cascading Style Sheet (CSS) is used to format the layout of a webpage</p><br>
+    <p id="red">With CSS, you can control the color, font, the size of text, the spacing between elements, how elements
+        are
+        positioned and laid out, what
+        background images or background color are to be used, different displays for different devices and screen sizes,
+        and much more!</p><br>
+    <span>
+        <b>Tip:</b> The word <b>cascading</b> means that a style applied to a parent element will also apply to all
+        children elements within the parent. So, if you set the color of the body text to "blue", all headings,
+        paragraphs, and other text elements within the body will also get the same color (unless you specify something
+        else)!
+    </span>
 </body>
+
 </html>
