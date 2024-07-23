@@ -9,7 +9,7 @@
     width: 250px;
     height: 100%;
     position: absolute;
-    animation: changeColor 3s infinite;
+    animation: changeColor 5s infinite;
 }
 
 @keyframes changeColor {
@@ -19,8 +19,8 @@
     }
     50%{
         background-color: #99ff00;
-        left: 100px;
-        border-radius: 40px;
+        left: 125px;
+        border-radius: 25%;
     }
     100%{
         background-color: #00a2ff;
