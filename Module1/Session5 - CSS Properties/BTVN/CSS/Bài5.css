@@ -1,0 +1,16 @@
+ul li{
+    list-style-type: none;
+    background-color: rgb(142, 227, 227);
+    padding: 5px;
+    width: 100%;
+}
+ul{
+    width: 300px;
+    font-size: 25px;
+    overflow: hidden;
+}
+ul li:hover{
+    background-color: silver;
+    color: red;
+    margin-left: 25px;
+}

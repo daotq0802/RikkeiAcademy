@@ -1,0 +1,9 @@
+ul li{
+    list-style: circle;
+}
+ul li:hover{
+    color: red;
+}
+*{
+    font-size: 25px;
+}

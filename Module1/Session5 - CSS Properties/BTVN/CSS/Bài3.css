@@ -1,0 +1,30 @@
+.main{
+    width: 500px;
+    height: 250px;
+    background-color: aqua;
+    position: relative;
+}
+
+.content{
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    animation: changeColor 3s infinite;
+}
+
+@keyframes changeColor {
+    0%{
+        background-color: #00a2ff;
+        left: 0;
+    }
+    50%{
+        background-color: #99ff00;
+        left: 100px;
+        border-radius: 40px;
+    }
+    100%{
+        background-color: #00a2ff;
+        left: 250px;
+        border-radius: 50%;
+    }
+}
