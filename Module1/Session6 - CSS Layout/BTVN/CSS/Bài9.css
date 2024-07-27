@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.itemBlock {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: red;
+    border: 1px solid #dbdbdb
+}
+
+.itemBlock p {
+    padding: 10px;
+    color: black;
+}
+
+.blueIcon {
+    color: blue;
+}
+
+.itemBlock div {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+hr {
+    margin: 0 10px;
+    border: 1px dashed #dbdbdb;
+}
+
+.itemBlock i {
+    margin-right: 5px;
+}
+
+#priceBlock {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#priceBlock p {
+    color: blue;
+    flex: 6;
+}
+
+#priceBlock button {
+    margin-right: 10px;
+    flex: 2;
+    height: 30px;
+    border: 1px dashed blue;
+    background-color: #fff;
+    color: blue;
+    border-radius: 5px
+}
+
+.itemBlock img {
+    width: 100% !important;
+}
+
+@media only screen and (min-width: 1200px) {
+    .itemBlock {
+        width: 22%;
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .itemBlock {
+        width: 30%;
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .itemBlock {
+        width: 45%;
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 590px) {
+    .itemBlock {
+        width: 100%;
+        margin: 10px;
+    }
+}

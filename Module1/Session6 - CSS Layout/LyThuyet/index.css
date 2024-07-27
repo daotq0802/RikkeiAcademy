@@ -1,0 +1,73 @@
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: #dbdbdb;
+    display: flex;
+    /* 
+    Giá trị mặc định là row
+    = row -> main-axis nằm ngang, cross-axis nằm dọc
+    = column -> main-axis nằm dọc, cross-axis nằm ngang
+    (2 trục này luôn vuông góc với nhau)
+    MAIN-AXIS
+        * justify-content
+            - center: Chính giữa
+            - flex-start: Sắp xếp từ đầu
+            - flex-end: Sắp xếp từ cuối
+            - space-around: Không đều (Mép đầu = 1/2 khoảng cách các item)
+            - space-between: Ra giữa tính từ mép đầu 
+            - space-evenly: Đều
+    CROSS-AXIS
+        * align-items
+            - center: Chính giữa
+            - flex-start: Xếp từ đầu
+            - flex-end: Xếp từ cuối
+        * align-content (phải có flex-wrap)
+            - Dùng giống như justify-content nhưng ăn theo cross-axis
+    */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: end;
+    align-content: space-evenly;
+}
+
+.item {
+    width: 200px;
+    height: 100px;
+}
+
+.item1 {
+    background-color: green;
+    /* flex: 1;
+    order: 2; */
+}
+
+.item2 {
+    background-color: red;
+    /* flex: 2;
+    order: 3; */
+}
+
+.item3 {
+    background-color: violet;
+    /* flex: 3;
+    order: 1; */
+}
+
+.item4 {
+    background-color: pink;
+    /* flex: 3;
+    order: 1; */
+}
+
+.item5 {
+    background-color: yellow;
+    /* flex: 3;
+    order: 1; */
+}
+
+.item6 {
+    background-color: blue;
+    /* flex: 3;
+    order: 1; */
+}

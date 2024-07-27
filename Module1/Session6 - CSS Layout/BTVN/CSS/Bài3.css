@@ -1,0 +1,44 @@
+.main-container,
+.column-flex,
+.row-flex,
+.column,
+.row {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.column div,
+.row div {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+    color: white;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row-flex {
+    width: 500px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.column-flex .reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row-flex .reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
