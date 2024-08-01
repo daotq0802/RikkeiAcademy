@@ -7,12 +7,71 @@ body {
     background-color: #000;
 }
 
+h3 {
+    color: hsl(4, 72%, 44%);
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
 .container {
     background-color: #201D37;
     padding: 20px;
+    display: flex;
+    border: 1px solid white;
 }
 
-.rate {
+.rateBlock {
     background-color: #fff;
     border-radius: 7px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.rateBlock div {
+    text-align: center;
+    width: 100%;
+}
+
+.rate button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.rate button:hover {
+    background-color: antiquewhite;
+}
+
+.rate button:focus {
+    background-color: #e2668f;
+    color: white;
+}
+
+.btnBlock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    border: 2px solid #dadada;
+    margin: 20px;
+    padding: 0 20px;
+    align-items: center;
+}
+.btnBlock input{
+    outline: none;
+    border: none;
+    width: 30%;
+}
+.btnBlock button{
+    right: 20%;
+    width: 70px;
+    height: 30px;
+    border: none;
 }

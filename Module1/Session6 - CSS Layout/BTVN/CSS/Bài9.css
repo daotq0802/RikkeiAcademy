@@ -69,18 +69,21 @@ hr {
         margin: 10px;
     }
 }
+
 @media only screen and (max-width: 1200px) {
     .itemBlock {
         width: 30%;
         margin: 10px;
     }
 }
+
 @media only screen and (max-width: 991px) {
     .itemBlock {
         width: 45%;
         margin: 10px;
     }
 }
+
 @media only screen and (max-width: 590px) {
     .itemBlock {
         width: 100%;

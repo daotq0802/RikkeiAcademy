@@ -1,0 +1,13 @@
+.logBox {
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.dtb {
+    font-weight: bold;
+    color: blue;
+}
+
+.error {
+    color: red;
+}

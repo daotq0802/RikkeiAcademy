@@ -1,0 +1,10 @@
+.logBox{
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.changeToF{
+    font-weight: normal;
+    color: red;
+}

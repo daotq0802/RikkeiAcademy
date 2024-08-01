@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<!-- 
+    RWD - Responsive Wed Design: Thiết kế trang web tương thích với các màn hình khác nhau (Máy tính, tablet, phone,...)
+    Cách Responsive:
+        1/ Các breakpoint
+            320px - 480px   : Smartphone nhỏ.
+            480px - 640px   : Smartphone vừa.
+            640px - 768px   : Tablet nhỏ.
+            768px - 992px   : Tablet vừa.
+            992px - 1200px  : Tablet lớn.
+            > 1200px        : Desktop
+        2/ Thiết kế RWD theo kiểu mobile first (ưu tiên điện thoại trước)
+            - Sẽ code trên giao diện điện thoại trước sau đó tới các thiết bị tablet và desktop
+            - Sử dụng @media screen and (min-width)
+        3/ Thiết kế RWD theo kiểu desktop first (ưu tiên máy tính trước)
+            - Sẽ code trên giao diện máy tính trước sau đó đi thiết kế tương thích với các màn hình tablet rồi xuống smartphone sau.
+            - Sử dụng @media screen and (max-width)
+    -->
+
+<body>
+    <div class="main-content">
+        <div class="a-content">
+            <a id="first-a">Home</a>
+            <a><i class="fa-solid fa-user"></i> About</a>
+            <a><i class="fa fa-th" aria-hidden="true"></i>Portfolio</a>
+            <a><i class="fa-solid fa-envelope"></i>Contact</a>
+        </div>
+
+        <div class="icon-content">
+            <i class="fa-solid searchIcon fa-magnifying-glass"></i>
+            <i class="fa-solid responIcon fa-bars"></i>
+        </div>
+    </div>
+</body>
+
+</html>
