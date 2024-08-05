@@ -94,3 +94,28 @@ function Bai6() {
     display.innerHTML = `Mảng ban đầu: ${uniqueArray} <br>
     Mảng sau khi sắp xếp: ${sortArray}`
 }
+
+//BÀI 7
+function Bai7() {
+    let uniqueArray = [1, 5, 7, 3, 5, 7, 99, 0, 2, 1, 5, 7, 4, 3, 5, 43, 6];
+    let cloneArray = [...uniqueArray]
+    let lines = [];
+    let map = new Map();
+
+    for (let i = 0; i < uniqueArray.length; i++) {
+        let count = 0;
+        for (let j = 0; j < cloneArray.length; j++) {
+            if (uniqueArray[i] == cloneArray[j]) {
+                count++;
+                delete cloneArray[j];
+            }
+        }
+        if (count >= 2) {
+            map.set(uniqueArray[i], count);
+        }
+    }
+    map.forEach((value, key) => {
+        lines.push(`${key} ===> Số lần lặp lại: ${value}`)
+    })
+    display.innerHTML = lines.join('<br>')
+}
