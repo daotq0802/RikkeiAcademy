@@ -1,17 +1,17 @@
 const display = document.querySelector('.console');
 //BÀI 1
 function Bai1() {
-    let exampleArray = [];
-    let input = prompt('Nhập số phần tử mảng');
-    if (!isNaN(input) && input != "") {
-        let i = 1;
-        while (i <= input) {
-            exampleArray.push(i);
-            i++
+    let exampleArray = ['Hà Nội', 3, 5, 2, 5.5, null];
+    let result = [];
+    for (const value of exampleArray) {
+        if (Number.isInteger(value)) {
+            result.push(value)
         }
-        display.innerHTML = `Các phần tử trong mảng là: ${exampleArray}`;
+    }
+    if (result.length > 0) {
+        display.innerHTML = `Các số nguyên trong mảng là: ${result.join(' ・ ')}`;
     } else {
-        display.innerHTML = 'Trong mảng không tồn tại số nguyên hoặc mảng rỗng';
+        display.innerHTML = `Trong mảng không tồn tại số nguyên`;
     }
 }
 
@@ -21,7 +21,7 @@ function Bai2() {
     <button onclick="searchInArray()">Tìm Kiếm</button>`
 }
 function searchInArray() {
-    let exampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let exampleArray = [1, 8, 3, 6, 4, 2, 5, 7, 9];
     let input = +prompt('Điền phần tử muốn tìm');
     if (input != "" && !isNaN(input) && exampleArray.includes(input)) {
         display.innerHTML = `Phần tử ${input} có trong mảng và nằm ở vị trí thứ ${exampleArray.indexOf(input)} của mảng`;
@@ -40,7 +40,9 @@ function Bai3() {
             count++
         }
     }
-    display.innerHTML = `Số ${input} xuất hiện ${count} lần trong mảng`
+    display.innerHTML =
+        `Mảng cho sẵn: ${uniqueArray.join(' - ')}<br>
+    Số ${input} xuất hiện ${count} lần trong mảng`
 }
 
 //BÀI 4

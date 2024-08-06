@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btnBlock {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    flex: 1;
+    margin: 10px;
+    height: 36px;
+    border: none;
+    background-color: #749bf4;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.console {
+    border: 1px solid #dbdbdb;
+    font-size: 20px;
+    font-family: monospace;
+    padding: 10px;
+}
+.console button{
+    width: 100px;
+}
