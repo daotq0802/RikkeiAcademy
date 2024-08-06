@@ -61,11 +61,17 @@ function Bai4() {
             divideA.push(i);
         }
     }
-    if (inputA > inputB) {
-        display.innerHTML = `Mảng các số chia hết cho B trong khoảng từ 1 đến ${inputA} là: ${divideB}`;
+    if (inputA != ('' || 0) && inputB != ('' || 0)) {
+        if (inputA > inputB) {
+            display.innerHTML = `Mảng các số chia hết cho B trong khoảng từ 1 đến ${inputA} là: ${divideB.join('・')}`;
+        } else {
+            display.innerHTML = `Mảng các số chia hết cho A trong khoảng từ 1 đến ${inputB} là: ${divideA.join('・')}`;
+        }
     } else {
-        display.innerHTML = `Mảng các số chia hết cho A trong khoảng từ 1 đến ${inputB} là: ${divideA}`;
+        display.innerHTML = `Giá trị nhập vào không hợp lệ`;
+
     }
+
 }
 
 //BÀI 5
@@ -75,8 +81,8 @@ function Bai5() {
     for (let i = uniqueArray.length - 1; i >= 0; i--) {
         reverseArray.push(uniqueArray[i]);
     }
-    display.innerHTML = `Mảng ban đầu: ${uniqueArray} <br>
-    Mảng sau khi đảo ngược thứ tự: ${reverseArray}`
+    display.innerHTML = `Mảng ban đầu: ${uniqueArray.join('・')} <br>
+    Mảng sau khi đảo ngược thứ tự: ${reverseArray.join('・')}`
 }
 
 //BÀI 6
@@ -93,8 +99,8 @@ function Bai6() {
             }
         }
     }
-    display.innerHTML = `Mảng ban đầu: ${uniqueArray} <br>
-    Mảng sau khi sắp xếp: ${sortArray}`
+    display.innerHTML = `Mảng ban đầu: ${uniqueArray.join('・')} <br>
+    Mảng sau khi sắp xếp: ${sortArray.join('・')}`
 }
 
 //BÀI 7
