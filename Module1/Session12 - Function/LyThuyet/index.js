@@ -61,10 +61,10 @@ function Bai4() {
 function twoSum(a, target) {
     let result = []
     for (let i = 0; i < a.length; i++) {
-        const difference = target - a[i];
-        if (a.indexOf(difference) != -1 && i != a.indexOf(difference)) {
-            result.push([i, a.indexOf(difference)])
-            delete a[i]
+        for (let j = i + 1; j < a.length; j++) {
+            if (a[i] + a[j] == target) {
+                result.push([a[i], a[j]])
+            }
         }
     }
     return result.join(" | ")
