@@ -87,15 +87,29 @@ function Bai5() {
 
 //BÀI 6
 function Bai6() {
-    let uniqueArray = [5, 10, 3, 6, 2, 7, -4, 2, -5, 9, -7, -12]
+    let uniqueArray = [5, 10, 3, 4, 6, 2, 7, 22, -4, 2, -5, 9, -3, -7, -12]
     let sortArray = [...uniqueArray];
-
-    for (let i = 0; i < sortArray.length - 1; i++) {
-        for (let j = i + 1; j < sortArray.length; j++) {
+    //Bubble Sort
+    /*for (let i = 0; i < sortArray.length - 1; i++) {
+        for (let j = i + 1; j < sortArray.length - i - 1; j++) {
             if (sortArray[i] > sortArray[j]) {
                 let tmp = sortArray[i];
                 sortArray[i] = sortArray[j];
                 sortArray[j] = tmp;
+            }
+        }
+    }*/
+    //Selection Sort
+    for (let i = 0; i < sortArray.length; i++) {
+        let index = i;
+        for (let j = i + 1; j < sortArray.length; j++) {
+            if (sortArray[j] < sortArray[index]) {
+                index = j
+            }
+            if (index != i) {
+                let temp = sortArray[i]
+                sortArray[i] = sortArray[index]
+                sortArray[index] = temp
             }
         }
     }

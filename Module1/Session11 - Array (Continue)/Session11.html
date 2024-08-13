@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .btnBlock {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        button {
+            flex: 1;
+            margin: 10px;
+            height: 36px;
+            border: none;
+            background-color: #749bf4;
+            color: #fff;
+            border-radius: 7px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .console {
+            border: 1px solid #dbdbdb;
+            font-size: 20px;
+            font-family: monospace;
+            padding: 10px;
+        }
+
+        .console button {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btnBlock">
+        <button onclick="Bai1()">Bài Tập 1</button>
+        <button onclick="Bai2()">Bài Tập 2</button>
+        <button onclick="Bai3()">Bài Tập 3</button>
+        <button onclick="Bai4()">Bài Tập 4</button>
+        <button onclick="Bai5()">Bài Tập 5</button>
+    </div>
+    <div class="console">
+
+    </div>
+    <script>
+        const display = document.querySelector('.console')
+        function Bai1() {
+            let array = ['a', 3, 'g', 'r', 5]
+            array.reverse()
+            display.innerHTML = `${array.join('')}`;
+        }
+
+        function Bai2() {
+            let array = [1, 5, 4, 6, 7, 8, 10, 2, 4, 5, 6, 8]
+            let result = []
+            for (let i = 0; i < array.length; i++) {
+                let index = i;
+                result.push(array[i])
+                if (array[i] % 2 == 0 && array[i + 1] % 2 == 0) {
+                    result.push('-')
+                }
+            }
+            display.innerHTML = `${result.join('')}`
+        }
+
+        function Bai3() {
+            let numbers = [1, 5, 8, 7, 9, 6, 5, 41, 2, 6, 55, 4, 8];
+            display.innerHTML = `${Math.max(...numbers)}`
+        }
+
+        function Bai4() {
+            let input = prompt('Nhập bất kỳ');
+            let string = '';
+            for (let i = 0; i < input.length; i++) {
+                if (input[i] === input[i].toLowerCase()) {
+                    string += input[i].toUpperCase();
+                } else {
+                    string += input[i].toLowerCase();
+                }
+            }
+            display.innerHTML = `${string}`
+        }
+
+        function Bai5() {
+            let numbers = [1, 5, 8, 7, 9, 6, 5, 41, 2, 6, 55, 4, 8];
+            numbers.sort((a, b) => a - b)
+            display.innerHTML = `${numbers}`
+
+        }
+    </script>
+</body>
+
+</html>

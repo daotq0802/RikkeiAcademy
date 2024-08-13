@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .btnBlock {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        button {
+            flex: 1;
+            margin: 10px;
+            height: 36px;
+            border: none;
+            background-color: #749bf4;
+            color: #fff;
+            border-radius: 7px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .console {
+            border: 1px solid #dbdbdb;
+            font-size: 20px;
+            font-family: monospace;
+            padding: 10px;
+        }
+
+        .console button {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btnBlock">
+        <button onclick="Bai1()">Bài Tập 1</button>
+        <button onclick="Bai2()">Bài Tập 2</button>
+        <button onclick="Bai3()">Bài Tập 3</button>
+        <button onclick="Bai4()">Bài Tập 4</button>
+        <button onclick="Bai5()">Bài Tập 5</button>
+    </div>
+    <div class="console"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
