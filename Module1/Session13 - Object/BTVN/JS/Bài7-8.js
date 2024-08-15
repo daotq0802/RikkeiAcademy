@@ -23,7 +23,7 @@ function regisAccount() {
     }
     let valid = listAccount.findIndex(element => element.email == regisEmail.value)
     if (valid == -1) {
-        if (regisUsername.value != '' &&regisEmail.value != '' &&regisPassword.value != '' && regisUsername.value.length >= 3 && regisPassword.value.length >= 8) {
+        if (regisUsername.value != '' && regisEmail.value != '' && regisPassword.value != '' && regisUsername.value.length >= 3 && regisPassword.value.length >= 8) {
             if (regisEmail.value.match(pattern)) {
                 listAccount.push(account)
                 localStorage.setItem('ListAccount', JSON.stringify(listAccount))
@@ -43,7 +43,7 @@ function loginAccount() {
     const list = JSON.parse(localStorage.getItem('ListAccount'))
     let validUsername = list.findIndex(element => element.username === loginUsername.value)
     let validPassword = list.findIndex(element => element.password === loginPassword.value)
-    if (validUsername == validPassword ) {
+    if (validUsername == validPassword) {
         alert('Login Success!!')
         review.innerHTML = `<div>ID: ${list[validUsername].id}<br>Username: ${list[validUsername].username}<br>Email: ${list[validUsername].email}<br>Password: ${list[validUsername].password}</div>`
     } else {
