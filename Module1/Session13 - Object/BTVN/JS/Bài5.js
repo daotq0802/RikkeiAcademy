@@ -18,12 +18,13 @@ function showAllList() {
     let list = JSON.parse(localStorage.getItem('BookList'));
     let stringList = ''
     list.forEach(element => {
+        stringList += '<div class="item">'
         for (const key in element) {
             let textKey = key.split('').join('')
             textKey = textKey[0].toUpperCase() + textKey.slice(1)
-            stringList += `<div>${textKey}: ${element[key]}</div>`
+            stringList += `<p>${textKey}: ${element[key]}</p>`
         }
-        stringList += '<br>'
+        stringList += '</div>'
     })
     review.innerHTML = stringList
 }
@@ -36,7 +37,7 @@ function search() {
     for (let i = 0; i < list.length; i++) {
         if (list[i].author == input) {
             index = i;
-            stringList += `<div>Name: ${list[i].name}<br>Author: ${list[i].author}</div><br>`
+            stringList += `<div class="item"><p>Name: ${list[i].name}<br>Author: ${list[i].author}</p></div>`
         }
     }
     review.innerHTML = stringList

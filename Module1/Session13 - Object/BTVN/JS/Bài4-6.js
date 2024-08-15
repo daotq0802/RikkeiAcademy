@@ -21,12 +21,14 @@ function showAllList() {
     let keySorted = list.sort((a, b) => { return a.price - b.price })
     let stringList = ''
     keySorted.forEach(element => {
+        stringList += '<div class="item">'
+
         for (const key in element) {
             let textKey = key.split('').join('')
             textKey = textKey[0].toUpperCase() + textKey.slice(1)
-            stringList += `<div>${textKey}: ${element[key]}</div>`
+            stringList += `<p>${textKey}: ${element[key]}</p>`
         }
-        stringList += `<br>`
+        stringList += `</div>`
     })
     review.innerHTML = stringList;
 }

@@ -18,12 +18,13 @@ function displayContact() {
     let list = JSON.parse(localStorage.getItem('ListContact'))
     let stringList = ''
     list.forEach(element => {
+        stringList += '<div class="item">'
         for (const key in element) {
             let textKey = key.split('').join('')
             textKey = textKey[0].toUpperCase() + textKey.slice(1)
-            stringList += `<div>${textKey}: ${element[key]}</div>`
+            stringList += `<p>${textKey}: ${element[key]}</p>`
         }
-        stringList += `<div><button onclick={updateContactByName('${element.name}')}>Sửa</button><button onclick={deleteContactByName('${element.name}')}>Xoá</button></div><br>`
+        stringList += `<div><button onclick={updateContactByName('${element.name}')}>Sửa</button><button onclick={deleteContactByName('${element.name}')}>Xoá</button></div></div>`
     })
     review.innerHTML = stringList
 }
@@ -42,7 +43,7 @@ function findContactByName() {
     let index = list.findIndex(element => element.name === searchInput)
     console.log(index)
     if (index != -1) {
-        stringList = `<div>Name: ${list[index].name}<br>Phone: ${list[index].phone}<br>Email: ${list[index].email}</div>`
+        stringList = `<div class="item"><p>Name: ${list[index].name}</p><p>Phone: ${list[index].phone}</p><p>Email: ${list[index].email}</p></div>`
         review.innerHTML = stringList
     } else {
         alert('Không tìm thấy danh bạ')
@@ -66,6 +67,9 @@ function updateContactByName(nameIndex) {
     let name = document.querySelector('#name')
     let phone = document.querySelector('#phone')
     let email = document.querySelector('#email')
+    document.querySelector('.addContact').style.display = 'none'
+    document.querySelector('.searchContact').style.display = 'none'
+
     btnUpdate.style.display = 'inline-block'
     name.disabled = true
     name.value = list[index].name
@@ -76,6 +80,9 @@ function updateContactByName(nameIndex) {
         list[index].email = email.value
         localStorage.setItem('ListContact', JSON.stringify(list))
         displayContact()
+        btnUpdate.style.display = 'none'
+        document.querySelector('.addContact').style.display = 'inline-block'
+        document.querySelector('.searchContact').style.display = 'inline-block'
     })
 }
 

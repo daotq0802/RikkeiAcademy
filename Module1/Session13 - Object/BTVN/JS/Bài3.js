@@ -18,11 +18,15 @@ function showAllList() {
     let list = JSON.parse(localStorage.getItem('ListStudent'));
     let stringList = '';
     list.forEach(element => {
+        stringList += '<div class="item">'
+
         for (const key in element) {
             let textKey = key.split('').join('');
             textKey = textKey[0].toUpperCase() + textKey.slice(1);
-            stringList += `<div>${textKey}: ${element[key]}</div>`
+            stringList += `<p>${textKey}: ${element[key]}</p>`
         }
+        stringList += `</div>`
+
     });
     review.innerHTML = stringList;
 }

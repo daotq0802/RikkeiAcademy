@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.msg {
+    margin-top: 15px
+}
+
+.cartList pre,
+.listProduct pre {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cartList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cartList .clearAll {
+    align-self: center;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+.item {
+    width: 200px;
+    height: 150px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+}
+
+.item p {
+    height: 30px;
+    font-size: 18px;
+}
+
+.item div button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 0 1px;
+    border: none;
+}

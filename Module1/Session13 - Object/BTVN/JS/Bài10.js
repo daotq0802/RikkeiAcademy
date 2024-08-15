@@ -23,12 +23,14 @@ function showAllList() {
     const list = JSON.parse(localStorage.getItem('ListProduct'));
     let stringList = ''
     list.forEach(element => {
+        stringList += '<div class="item">'
+
         for (const key in element) {
             let textKey = key.split('').join('')
             textKey = textKey[0].toUpperCase() + textKey.slice(1)
-            stringList += `<div>${textKey}: ${element[key]}</div>`
+            stringList += `<p>${textKey}: ${element[key]}</p>`
         }
-        stringList += `<div><button onclick="addToCart('${element.name}', ${element.price}, 1)">Add To Cart</button></div><br>`
+        stringList += `<div><button onclick="addToCart('${element.name}', ${element.price}, 1)">Add To Cart</button></div></div>`
     })
     review.innerHTML = stringList
 }
@@ -46,7 +48,7 @@ function checkInCart(name) {
 
 //Thêm sản phẩm vào danh sách
 function addToCart(productName, price, quantity) {
-    document.querySelector('.cartList').style.display = 'block'
+    document.querySelector('.cartList').style.display = 'flex'
     let list = JSON.parse(localStorage.getItem('ShoppingCart'))
     if (list == null) {
         const shoppingCart = [];
@@ -73,14 +75,16 @@ function displayCart() {
     const list = JSON.parse(localStorage.getItem('ShoppingCart'));
     let stringList = ''
     if (list != null) {
-        document.querySelector('.cartList button').style.display = 'block'
+        document.querySelector('.cartList .clearAll').style.display = 'block'
         list.forEach(element => {
+            stringList += '<div class="item">'
+
             for (const key in element) {
                 let textKey = key.split('').join('')
                 textKey = textKey[0].toUpperCase() + textKey.slice(1)
-                stringList += `<div>${textKey}: ${element[key]}</div>`
+                stringList += `<p>${textKey}: ${element[key]}</p>`
             }
-            stringList += `<div><button onclick="removeFromCart('${element.name}')">Delete</button></div><br>`
+            stringList += `<div><button onclick="removeFromCart('${element.name}')">Delete</button></div></div>`
         })
         cartList.innerHTML = stringList
         calculateTotal()
@@ -98,7 +102,7 @@ function displayCart() {
 
 //Khi giỏ hàng trống
 function emptyList() {
-    document.querySelector('.cartList button').style.display = 'none'
+    document.querySelector('.cartList .clearAll').style.display = 'none'
     document.querySelector('.sumPrice').style.display = 'none'
 }
 
@@ -115,7 +119,7 @@ function removeFromCart(productName) {
     }
     if (list.length == 0) {
         cartList.innerHTML = `Dont Have Any Product In Cart`
-        document.querySelector('.cartList button').style.display = 'none'
+        document.querySelector('.cartList .clearAll').style.display = 'none'
         document.querySelector('.sumPrice').style.display = 'none'
     }
 }
@@ -139,7 +143,7 @@ function calculateTotal() {
         total += sum
     })
     localStorage.setItem(CART_STORAGE, JSON.stringify(list))
-    sumPrice.innerHTML = `Total: ${total.toString().replace(numberPattern, ",")}`
+    sumPrice.innerHTML = `<div><label>Total: </label><span>${total.toString().replace(numberPattern, ",")}</span>`
 }
 
 function addToLocalStorage(storageName, list) {

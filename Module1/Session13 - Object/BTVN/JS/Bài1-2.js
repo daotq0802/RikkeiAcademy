@@ -24,12 +24,13 @@ function showAllList() {
     let list = JSON.parse(window.localStorage.getItem('MyListInformation'))
     let stringList = ''
     list.forEach(element => {
+        stringList += '<div class="item">'
         for (const key in element) {
             let textKey = key.split('').join('');
             textKey = textKey[0].toUpperCase() + textKey.slice(1)
-            stringList += `<div>${textKey}: ${element[key]}</div>`
+            stringList += `<p>${textKey}: ${element[key]}</p>`
         }
-        stringList += `<div><button onclick={deleteAddress(${element.id})}>Xoá Address</button><button onclick={addEmail(${element.id})}>Thêm Email</button></div>`
+        stringList += `<div><button onclick={deleteAddress(${element.id})}>Xoá Address</button><button onclick={addEmail(${element.id})}>Thêm Email</button></div></div>`
     });
     review.innerHTML = stringList;
 }
@@ -53,15 +54,16 @@ function addEmail(id) {
     document.querySelector('#id').value = list[index].id
     document.querySelector('#name').value = list[index].name
     document.querySelector('#phone').value = list[index].phone
-}
+    document.querySelector('.newEmail').style.display = 'inline-block'
 
-function newEmail() {
-    let list = JSON.parse(window.localStorage.getItem('MyListInformation'))
-    let index = list.findIndex(element => element.id == document.querySelector('#id').value);
-    list[index].email = document.querySelector('#email').value
-    localStorage.setItem('MyListInformation', JSON.stringify(list));
-    showAllList()
-    
-    document.querySelector('.address').style.display = 'block'
-    document.querySelector('.email').style.display = 'none'
+    document.querySelector('.newEmail').addEventListener('click', () => {
+        list[index].email = document.querySelector('#email').value
+        localStorage.setItem('MyListInformation', JSON.stringify(list));
+        showAllList()
+        document.querySelector('.address').style.display = 'block'
+        document.querySelector('.email').style.display = 'none'
+        document.querySelector('.newEmail').style.display = 'none'
+
+        document.forms[0].reset()
+    })
 }
