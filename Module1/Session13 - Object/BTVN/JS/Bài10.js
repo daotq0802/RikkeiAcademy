@@ -13,12 +13,12 @@ class Product {
 }
 
 const listProduct = [];
-
 listProduct.push(new Product('Iphone 15', 12000000, 4))
 listProduct.push(new Product('Ferrari', 800000000, 5))
 listProduct.push(new Product('Boat', 15600000, 4))
 localStorage.setItem('ListProduct', JSON.stringify(listProduct))
 
+//Hiện thị tất cả sản phẩm ra màn hình
 function showAllList() {
     const list = JSON.parse(localStorage.getItem('ListProduct'));
     let stringList = ''
@@ -33,6 +33,7 @@ function showAllList() {
     review.innerHTML = stringList
 }
 
+//Kiểm tra sản phẩm có trong danh sách hay không
 function checkInCart(name) {
     const list = JSON.parse(localStorage.getItem('ShoppingCart'))
     let index = list.findIndex(element => element.name === name);
@@ -43,6 +44,7 @@ function checkInCart(name) {
     }
 }
 
+//Thêm sản phẩm vào danh sách
 function addToCart(productName, price, quantity) {
     document.querySelector('.cartList').style.display = 'block'
     let list = JSON.parse(localStorage.getItem('ShoppingCart'))
@@ -51,6 +53,7 @@ function addToCart(productName, price, quantity) {
         shoppingCart.push(new Product(productName, price, quantity));
         addToLocalStorage(CART_STORAGE, shoppingCart)
     } else {
+        //Gọi phương thức kiểm tra trùng lặp
         let index = checkInCart(productName)
         switch (index) {
             case -1:
@@ -65,6 +68,7 @@ function addToCart(productName, price, quantity) {
     }
 }
 
+//Hiển thị tất cả sản phẩm có trong giỏ hàng
 function displayCart() {
     const list = JSON.parse(localStorage.getItem('ShoppingCart'));
     let stringList = ''
@@ -89,17 +93,19 @@ function displayCart() {
         } catch (error) {
             cartList.innerHTML = `Dont Have Any Product In Cart`
         }
-
     }
 }
 
+//Khi giỏ hàng trống
 function emptyList() {
     document.querySelector('.cartList button').style.display = 'none'
     document.querySelector('.sumPrice').style.display = 'none'
 }
 
+//Xoá sản phẩm trong giỏ hàng
 function removeFromCart(productName) {
     let list = JSON.parse(localStorage.getItem('ShoppingCart'))
+    //Lấy vị trí sản phẩm
     let index = checkInCart(productName)
     switch (index) {
         case index:
@@ -113,11 +119,14 @@ function removeFromCart(productName) {
         document.querySelector('.sumPrice').style.display = 'none'
     }
 }
+
+//Xoá toàn bộ giỏ hàng
 function clearCart() {
     localStorage.removeItem('ShoppingCart')
     displayCart()
 }
 
+//Tổng giá tiền của từng sản phẩm và tất cả sản phẩm
 function calculateTotal() {
     document.querySelector('.sumPrice').style.display = 'block'
 
