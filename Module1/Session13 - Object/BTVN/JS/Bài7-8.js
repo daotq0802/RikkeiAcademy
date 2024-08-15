@@ -43,7 +43,7 @@ function loginAccount() {
     const list = JSON.parse(localStorage.getItem('ListAccount'))
     let validUsername = list.findIndex(element => element.username === loginUsername.value)
     let validPassword = list.findIndex(element => element.password === loginPassword.value)
-    if (validUsername != -1 && validPassword != -1) {
+    if (validUsername == validPassword ) {
         alert('Login Success!!')
         review.innerHTML = `<div>ID: ${list[validUsername].id}<br>Username: ${list[validUsername].username}<br>Email: ${list[validUsername].email}<br>Password: ${list[validUsername].password}</div>`
     } else {
