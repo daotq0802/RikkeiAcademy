@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVN Session 13</title>
+    <link rel="stylesheet" href="../CSS/Bài7-8.css">
+</head>
+
+<body>
+    <form class="regisLoginForm">
+        <div class="regisForm" hidden>
+            <div>
+                <label for="regisUsername">Username</label>
+                <input type="text" id="regisUsername">
+            </div>
+            <div>
+                <label for="regisEmail">Email</label>
+                <input type="text" id="regisEmail">
+            </div>
+            <div>
+                <label for="regisPassword">Password</label>
+                <input type="password" id="regisPassword">
+            </div>
+            <div>
+                <button type="button" onclick="regisAccount()">Register</button>
+                <p>Already have account? <a onclick="moveToLogin()">Login</a></p>
+            </div>
+        </div>
+
+        <div class="loginForm">
+            <div>
+                <label for="loginUsername">Username</label>
+                <input type="text" id="loginUsername">
+            </div>
+            <div>
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword">
+            </div>
+            <div>
+                <button type="button" onclick="loginAccount()">Login</button>
+                <p>Don't have account? <a onclick="moveToRegis()">Register</a></p>
+            </div>
+        </div>
+
+    </form>
+    <div class="msg">
+        <pre></pre>
+    </div>
+    <script src="../JS/Bài7-8.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //Cách 1:
+        let student = {};
+        //Cách 2:
+        let cat = new Object();
+        //Cách 3:
+        function Student(name, age, id, address) {
+            this.name = name;
+            this.age = age;
+            this.id = id;
+            this.address = address;
+        }
+        let std1 = new Student('Minh Thu', 20, 1, 'Hà Nội');
+        console.log(std1);
+        //Cách 4:
+        class StudentInfor {
+            constructor(name, age, id, address, gender) {
+                this.name = name;
+                this.age = age;
+                this.id = id;
+                this.address = address;
+                this.gender = gender;
+            }
+            //Khai báo định nghĩa các phương thức
+            sayHello = () => {
+                console.log('Xin Chào!!');
+            }
+        }
+        let std2 = new StudentInfor('Lan', 22, 114, 'Hồ Chí Minh', 'Nữ');
+        console.log(std2);
+        std2.sayHello();
+        delete std1.name;
+        console.log(std1);
+        
+    </script>
+</body>
+
+</html>

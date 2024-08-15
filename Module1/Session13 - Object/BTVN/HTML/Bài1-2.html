@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Làm Quen Với Đối Tượng</title>
+    <link rel="stylesheet" href="../CSS/Bài1-2.css">
+</head>
+
+<body onload="showAllList()">
+    <form id="inforForm">
+        <div hidden>
+            <label for="id">Id</label>
+            <input type="text" id="id">
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="phone">Phone</label>
+            <input type="text" id="phone">
+        </div>
+        <div class="address">
+            <label for="address">Address</label>
+            <input type="text" id="address">
+        </div>
+        <div class="email" hidden>
+            <label for="email">Email</label>
+            <input type="text" id="email">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+            <button type='button' onclick="newEmail()">Thêm Email</button>
+        </div>
+    </form>
+    <div class="review">
+        <pre></pre>
+    </div>
+    <script src="../JS/Bài1-2.js"></script>
+</body>
+
+</html>

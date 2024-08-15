@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVN Session 13</title>
+    <link rel="stylesheet" href="../CSS/Bài9.css">
+</head>
+
+<body onload="displayContact()">
+    <form class="contactForm">
+        <div><label for="name">Name</label><input type="text" id="name"></div>
+        <div><label for="phone">Phone No.</label><input type="text" id="phone"></div>
+        <div><label for="email">Email</label><input type="text" id="email"></div>
+        <div>
+            <button type="submit">Add New Contact</button>
+            <button type="button" onclick="findContactByName()">Search Contact</button>
+            <button type="button" class="btnUpdate" hidden>Update</button>
+        </div>
+    </form>
+    <div class="msg">
+        <pre></pre>
+    </div>
+    <script src="../JS/Bài9.js"></script>
+</body>
+
+</html>
