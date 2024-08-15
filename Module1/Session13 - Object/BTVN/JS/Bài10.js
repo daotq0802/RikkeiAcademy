@@ -11,7 +11,6 @@ class Product {
 }
 
 const listProduct = [];
-const shoppingCart = [];
 
 listProduct.push(new Product('Iphone 15', 12000000, 4))
 listProduct.push(new Product('Ferrari', 800000000, 5))
@@ -45,7 +44,8 @@ function checkInCart(name) {
 function addToCart(productName, price, quantity) {
     document.querySelector('.cartList').style.display = 'block'
     let list = JSON.parse(localStorage.getItem('ShoppingCart'))
-    if (list === null) {
+    if (list == null) {
+        const shoppingCart = [];
         shoppingCart.push(new Product(productName, price, quantity));
         localStorage.setItem('ShoppingCart', JSON.stringify(shoppingCart))
         displayCart()
@@ -90,6 +90,9 @@ function removeFromCart(productName) {
         list.splice(index, 1)
         localStorage.setItem('ShoppingCart', JSON.stringify(list))
         displayCart()
+    }
+    if (list.length < 1) {
+        document.querySelector('.cartList').style.display = 'none'
     }
     calculateTotal()
 }
