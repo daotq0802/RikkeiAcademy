@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>innerText, textContent và innerHTML là ba thuộc tính thường được sử dụng để thao tác với nội dung trên trang web.
+
+        innerText: thuộc tính này trả về nội dung văn bản hiển thị trên trang, không bao gồm các thẻ HTML. Ví dụ, nếu có
+        một đoạn văn bản được đặt trong thẻ
+    <p>, innerText sẽ trả về nội dung của đoạn văn bản đó mà không bao gồm thẻ
+    <p>.
+        textContent: tương tự như innerText, textContent cũng trả về nội dung văn bản của phần tử, bao gồm cả văn bản
+        ẩn. Nó sẽ trả về toàn bộ nội dung của phần tử, bao gồm cả văn bản ẩn và các thẻ HTML.
+        innerHTML: thuộc tính này trả về nội dung HTML của phần tử, bao gồm cả các thẻ HTML. Khi sử dụng innerHTML, bạn
+        có thể thay đổi cả cấu trúc HTML của phần tử đó.
+
+        Ví dụ: Nếu có một đoạn mã HTML như sau:
+    <p id="example">Hello, <strong>world</strong>!</p>
+
+    innerText sẽ trả về: "Hello, world!"<br>
+    textContent sẽ trả về: "Hello, world!"<br>
+    innerHTML sẽ trả về: "Hello, <strong>world</strong>!"
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myArray = ['Nguyễn Văn A', 'Vũ Thị B', 'Nguyễn Minh C']
+        let button = document.createElement('button')
+        let input = document.createElement('input')
+        let update = document.createElement('button')
+        let ul = document.createElement('ul')
+
+        button.innerText = `Click Me!`
+        button.style.backgroundColor = 'lightblue'
+        button.style.borderRadius = '5px'
+        button.style.height = '36px'
+        button.style.width = '150px'
+        button.style.border = 'none'
+
+        update.innerText = `Update!`
+        update.style.backgroundColor = 'lightblue'
+        update.style.borderRadius = '5px'
+        update.style.height = '36px'
+        update.style.width = '150px'
+        update.style.border = 'none'
+        update.style.display = 'none'
+
+        input.setAttribute('type', 'text')
+        document.querySelector('body').appendChild(input)
+        document.querySelector('body').appendChild(button)
+        document.querySelector('body').appendChild(update)
+
+        button.addEventListener('click', () => {
+            if (input.value != '') {
+                myArray.push(input.value)
+                let li = document.createElement('li')
+                let edit = document.createElement('button')
+                edit.textContent = 'Edit'
+                edit.setAttribute('class', 'editButton')
+                li.textContent = input.value
+                li.append(edit)
+                ul.appendChild(li)
+                input.value = ''
+            } else {
+                alert('Please Input Value')
+            }
+        })
+
+        document.querySelector('body').appendChild(ul)
+        showList()
+        function showList() {
+            myArray.forEach(element => {
+                let li = document.createElement('li')
+                let edit = document.createElement('button')
+                edit.textContent = 'Edit'
+                edit.setAttribute('class', 'editButton')
+                li.innerHTML = element
+                li.appendChild(edit)
+                ul.appendChild(li)
+            })
+        }
+
+        function getEventTarget(e) {
+            e = e || window.event;
+            return e.target || e.srcElement;
+        }
+
+        ul.onclick = function (event) {
+            let target = getEventTarget(event);
+            let li = target.closest('li');
+            let nodes = Array.from(li.closest('ul').children);
+            let index = nodes.indexOf(li);
+            input.value = myArray[index]
+            button.style.display = 'none'
+            update.style.display = 'inline-block'
+            update.onclick = function (event) {
+                let edit = document.createElement('button')
+                edit.textContent = 'Edit'
+                button.style.display = 'inline-block'
+                update.style.display = 'none'
+                myArray[index] = input.value
+                let liIndex = document.getElementsByTagName('li')
+                liIndex[index].innerHTML = myArray[index]
+                liIndex[index].append(edit)
+                console.log(myArray);
+            }
+        };
+
+        // update.onclick = function (event) {
+        //     let edit = document.createElement('button')
+        //     edit.textContent = 'Edit'
+        //     button.style.display = 'inline-block'
+        //     update.style.display = 'none'
+        //     myArray[index] = input.value
+        //     let liIndex = document.getElementsByTagName('li')
+        //     liIndex[index].innerHTML = myArray[index]
+        //     liIndex[index].append(edit)
+        //     console.log(myArray);
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let text = document.createElement('h1')
+        let button = document.createElement('button')
+        document.querySelector('body').appendChild(text)
+        document.querySelector('body').appendChild(button)
+
+        text.innerText = `This text is optional!`
+        button.innerText = `Click Me!`
+        button.style.backgroundColor = 'lightblue'
+        button.style.borderRadius = '5px'
+        button.style.height='36px'
+        button.style.width = '150px'
+        button.style.border = 'none'
+
+        button.addEventListener('click', () => {
+            text.style.backgroundColor = 'yellow'
+            text.style.color = 'red'
+        })
+    </script>
+</body>
+</html>

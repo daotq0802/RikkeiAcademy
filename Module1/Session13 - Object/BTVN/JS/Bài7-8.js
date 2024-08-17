@@ -23,7 +23,7 @@ function regisAccount() {
     }
     let valid = listAccount.findIndex(element => element.email == regisEmail.value)
     if (valid == -1) {
-        if (regisUsername.value != '' && regisEmail.value != '' && regisPassword.value != '' && regisUsername.value.length >= 3 && regisPassword.value.length >= 8) {
+        if (regisUsername.value != '' &&regisEmail.value != '' &&regisPassword.value != '' && regisUsername.value.length >= 3 && regisPassword.value.length >= 8) {
             if (regisEmail.value.match(pattern)) {
                 listAccount.push(account)
                 localStorage.setItem('ListAccount', JSON.stringify(listAccount))

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let button = document.createElement('button')
+        document.querySelector('body').appendChild(button)
+        button.setAttribute('type','button')
+        button.textContent = `Click Me!`
+        button.addEventListener('click', () =>{
+            alert('Xin Chào!!!')
+        })
+    </script>
+</body>
+</html>

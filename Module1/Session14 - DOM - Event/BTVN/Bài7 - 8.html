@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="showList()">
+    <script>
+        let table = document.createElement('table')
+        let button = document.createElement('button')
+        button.textContent = `Add Row`
+        button.style.backgroundColor = 'lightblue'
+        button.style.borderRadius = '5px'
+        button.style.height = '36px'
+        button.style.width = '150px'
+        button.style.border = 'none'
+        document.querySelector('body').appendChild(table)
+        document.querySelector('body').appendChild(button)
+        table.border = 1
+        table.cellPadding = 10
+        table.cellSpacing = 5
+
+        let rowIndex = 1
+        let row = document.createElement('tr')
+        table.appendChild(row).innerHTML = `<td>Cell 1 Row 1</td><td>Cell 2 Row 1</td><td>Cell 3 Row 1</td><td><button onclick="deleteRow(this)">Delete</button></td>`
+        button.addEventListener('click', () => {
+            let count = ++rowIndex;
+            let row = document.createElement('tr')
+            table.appendChild(row).innerHTML = `<td>Cell 1 Row ${count}</td><td>Cell 2 Row ${count}</td><td>Cell 3 Row ${count}</td><td><button onclick="deleteRow(this)">Delete</button></td>`
+        })
+        function deleteRow(row) {
+            let i = row.parentNode.parentNode.rowIndex
+            document.querySelector('table').deleteRow(i)
+        }
+
+    </script>
+</body>
+
+</html>
