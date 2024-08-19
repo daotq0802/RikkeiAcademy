@@ -1,6 +1,6 @@
 const review = document.querySelector('.msg pre')
 const prdForm = document.querySelector('.productForm')
-let prdList = [];
+let data = JSON.parse(localStorage.getItem('ProductList')) || [];
 
 prdForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -10,15 +10,14 @@ prdForm.addEventListener('submit', (event) => {
         price: document.querySelector('#price').value,
         quantity: document.querySelector('#quantity').value
     }
-    prdList.push(product)
+    data.push(product)
     document.forms[0].reset()
-    localStorage.setItem('ProductList', JSON.stringify(prdList));
+    localStorage.setItem('ProductList', JSON.stringify(data));
     showAllList()
 })
 
 function showAllList() {
-    let list = JSON.parse(localStorage.getItem('ProductList'));
-    let keySorted = list.sort((a, b) => { return a.price - b.price })
+    let keySorted = data.sort((a, b) => { return a.price - b.price })
     let stringList = ''
     keySorted.forEach(element => {
         stringList += '<div class="item">'

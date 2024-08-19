@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            border: none;
+            background-color: greenyellow;
+            height: 30px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        li {
+            height: 50px;
+        }
+
+        input {
+            height: 25px;
+            border-radius: 15px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body onload="renderStudent()">
+    <input type="text" id="input">
+    <input type="text" id="idHolder" disabled hidden>
+    <button onclick="addStudent()">Add Item</button>
+    <button hidden onclick="updateStudent()">Update</button>
+
+    <ul id="list">
+    </ul>
+    <script>
+        let studentList = []
+        let addButton = document.getElementsByTagName('button')[0]
+        let updateButton = document.getElementsByTagName('button')[1]
+
+        addStudent = () => {
+            let valueInput = document.getElementById('input')
+            let student = {
+                name: valueInput.value,
+                id: Date.now()
+            }
+            studentList.push(student)
+            renderStudent()
+            valueInput.value = ''
+            valueInput.focus()
+        }
+
+        renderStudent = () => {
+            let html = ''
+            studentList.forEach(item => {
+                html += `<li><span>${item.name}<span> <button onclick="deleteStudent(${item.id})">Delete</button> <button onclick="editBegin(${item.id})">Edit</button></li>`
+            })
+            document.getElementById('list').innerHTML = html
+        }
+
+        editBegin = (id) => {
+            addButton.style.display = 'none'
+            updateButton.style.display = 'inline-block'
+            let index = studentList.findIndex(item => item.id === id)
+            document.getElementById('input').value = studentList[index].name
+            document.getElementById('idHolder').value = studentList[index].id
+            document.getElementById('input').focus()
+        }
+
+        updateStudent = () => {
+            addButton.style.display = 'inline-block'
+            updateButton.style.display = 'none'
+            let index = studentList.findIndex(item => item.id == document.getElementById('idHolder').value)
+            studentList[index].name = document.getElementById('input').value
+            renderStudent()
+            document.getElementById('input').value = ''
+            document.getElementById('input').focus()
+        }
+        
+        deleteStudent = (id) => {
+            let confirmDelete = confirm('Bạn có chắc chắn muốn xoá học sinh này??')
+            let index = studentList.findIndex(item => item.id === id)
+            if (confirmDelete) {
+                studentList.splice(index, 1)
+                renderStudent()
+                document.getElementById('input').value = ''
+            }
+            return
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 50%;
+            margin-left: 25%;
+            border: 1px solid black;
+            height: 50%;
+            margin-top: 10%;
+        }
+
+        .image-view {
+            width: 100%;
+            height: 500px;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .image-view button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            padding: 10px 15px;
+            background-color: hsla(0, 0%, 0%, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .image-view img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .image-gallery {
+            height: 100px;
+            /* border: 1px solid black; */
+            margin-top: 15px;
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            align-content: center;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            display: none;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            margin: auto;
+        }
+
+        img.displaySlide {
+            display: block;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-view">
+            <button class="prev" onclick="prevSlide()">&#10094</button>
+            <button class="next" onclick="nextSlide()">&#10095</button>
+        </div>
+    </div>
+    <div class="image-gallery">
+
+    </div>
+
+    <script>
+        let imageList = [
+            'https://img.freepik.com/free-photo/delicious-coffee-beans-cup_23-2150691429.jpg',
+            'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            'https://img.freepik.com/free-photo/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.jpg',
+            'https://t4.ftcdn.net/jpg/01/16/61/93/360_F_116619399_YA611bKNOW35ffK0OiyuaOcjAgXgKBui.jpg',
+            'https://media.istockphoto.com/id/1303583671/photo/cup-glass-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.webp?b=1&s=170667a&w=0&k=20&c=aVldamhbluP7K6ACdAEir6X8mGH7zwPur0p0mZWSXYI=',
+            'https://cdn.pixabay.com/photo/2017/05/12/08/29/coffee-2306471_640.jpg',
+            'https://media.istockphoto.com/id/1349239413/photo/shot-of-coffee-beans-and-a-cup-of-black-coffee-on-a-wooden-table.jpg?s=612x612&w=0&k=20&c=ZFThzn27DAj2KeVlLdt3_E6RJZ2sbw2g4sDyO7mYvqk=',
+            'https://www.cafecoffeeday.com/sites/default/files/mobile-new-menu-cafe-coffee-day.jpg',
+            'https://static.vecteezy.com/system/resources/thumbnails/023/010/450/small/the-cup-of-latte-coffee-with-heart-shaped-latte-art-and-ai-generated-free-photo.jpg',
+            'https://cdn.pixabay.com/photo/2018/10/06/11/22/coffee-3727673_640.jpg'
+        ]
+
+        let imageGallery = document.querySelector('.image-gallery')
+        let imageView = document.querySelector('.image-view')
+        imageList.forEach((item, index) => {
+            imageView.innerHTML += `<img class='mySlides'" src='${item}'>`
+        })
+
+        const slides = document.querySelectorAll(".image-view img");
+        let slideIndex = 0;
+        let intervalId = null;
+
+        document.addEventListener("DOMContentLoaded", initializeSlider);
+
+        function initializeSlider() {
+            if (slides.length > 0) {
+                slides[slideIndex].classList.add("displaySlide");
+                intervalId = setInterval(nextSlide, 5000);
+            }
+        }
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+
+                slideIndex = 0;
+            }
+            else if (index < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach(slide => {
+                slide.classList.remove("displaySlide");
+            });
+            slides[slideIndex].classList.add("displaySlide");
+        }
+
+
+
+        prevSlide = () => {
+            clearInterval(intervalId);
+            slideIndex--;
+            showSlide(slideIndex);
+        }
+
+        nextSlide = () => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }
+        imageClick = (index) => {
+            imageView.innerHTML = `<img src='${imageList[index]}'>`
+        }
+    </script>
+</body>
+
+</html>
