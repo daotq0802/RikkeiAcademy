@@ -22,7 +22,7 @@
 img.displaySlide {
     display: block;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
 }
 
 @keyframes fade {
@@ -75,4 +75,10 @@ img.displaySlide {
     border-radius: 10px;
     width: 100px;
     height: 100px;
+    opacity: .5;
+    border: 3px solid black;
+}
+
+.image-gallery ul img:hover{
+    opacity: 1;
 }
