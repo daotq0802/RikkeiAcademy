@@ -5,12 +5,9 @@ let intervalId = null;
 
 document.addEventListener("DOMContentLoaded", initializeSlider);
 slides.innerHTML = `<img class="displaySlide" src="./Images/Coffee0.jpg">`;
+renderGallery()
 
-for (let i = 0; i < 10; i++) {
-  gallery.innerHTML += `<img onclick="imageClick(${i})" src="./Images/Coffee${i}.jpg">`;
-}
-
-const galleryImage = document.querySelectorAll(".image-gallery img");
+const galleryImage = Array.from(document.querySelectorAll(".image-gallery ul img"));
 
 function initializeSlider() {
   if (galleryImage.length > 0) {
@@ -20,6 +17,7 @@ function initializeSlider() {
 }
 
 function showSlide(index) {
+
   if (index >= galleryImage.length) {
     slideIndex = 0;
   } else if (index < 0) {
@@ -38,12 +36,31 @@ imageClick = (index) => {
   slides.innerHTML = `<img class="displaySlide" src="./Images/Coffee${index}.jpg">`;
 };
 
+function renderGallery(listImage) {
+  let listString = ''
+  for (let i = 0; i < 10; i++) {
+    listString += `<img onclick="imageClick(${i})" src="./Images/Coffee${i}.jpg">`;
+  }
+  gallery.innerHTML = listString
+}
+function updateGallery() {
+
+}
+
 function prevClick() {
   slideIndex--;
+  // let lastImage = galleryImage.pop()
+  // galleryImage.unshift(lastImage)
   showSlide(slideIndex);
+  // renderImage()
 }
 
 function nextClick() {
+
   slideIndex++;
+  // let firstImage = galleryImage.shift()
+  // galleryImage.push(firstImage)
+  // renderGallery(galleryImage)
+
   showSlide(slideIndex);
 }

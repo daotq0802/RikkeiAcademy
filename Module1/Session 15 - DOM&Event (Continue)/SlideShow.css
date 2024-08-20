@@ -6,7 +6,7 @@
 
 .container {
     position: relative;
-    width: 50%;
+    width: 30%;
     margin: auto;
     overflow: hidden;
 }
@@ -56,14 +56,14 @@ img.displaySlide {
     right: 0;
 }
 
-.image-gallery{
+.image-gallery {
     width: 100%;
     margin: auto;
     height: 100px;
     margin-top: 10px;
 }
 
-.image-gallery ul{
+.image-gallery ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,6 +79,6 @@ img.displaySlide {
     border: 3px solid black;
 }
 
-.image-gallery ul img:hover{
+.image-gallery ul img:hover {
     opacity: 1;
 }
