@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-contain {
+    margin: auto;
+    width: 80%;
+    height: 350px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.right-header img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px red;
+}
+
+.right-header {
+    width: 40%;
+}
+
+#slide-show {
+    width: 60%;
+    box-shadow: 0px 0px 10px green;
+    border-radius: 10px;
+}
+
+#slide-show .slide img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+}
+
+/* ! Product Contain */
+.product-contain {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-item img {
+    width: 100%;
+    height: 200px;
+}
+
+/* ! User Contain */
+.user-contain {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-infor i {
+    margin-right: 10px;
+}
+
+/* ! Login Modal */
+.login-contain,
+.register-contain {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-contain div,
+.register-contain div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-contain div label,
+.register-contain div label {
+    width: 150px;
+    height: 30px;
+}
+
+.login-contain div input,
+.register-contain div input {
+    border-radius: 5px;
+    border: 1px solid #2125294d;
+    padding: 5px;
+}
+
+.loginButton {
+    border: none;
+    background-color: #212529;
+    color: #fff;
+}
+
+.loginButton i {
+    margin-left: 20px;
+}

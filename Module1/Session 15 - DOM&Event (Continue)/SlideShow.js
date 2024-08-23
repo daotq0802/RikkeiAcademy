@@ -43,9 +43,6 @@ function renderGallery(listImage) {
   }
   gallery.innerHTML = listString
 }
-function updateGallery() {
-
-}
 
 function prevClick() {
   slideIndex--;
