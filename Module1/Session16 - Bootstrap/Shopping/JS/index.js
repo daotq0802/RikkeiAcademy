@@ -3,6 +3,7 @@ const login = document.querySelector('#loginModal')
 const regis = document.querySelector('#registerModal')
 const loginButton = document.querySelector('.loginButton')
 const backToLogin = document.querySelector('#btLogin')
+
 let showModal = (modalName) => {
     if (modalName) {
         const modal = new bootstrap.Modal(modalName);
@@ -20,16 +21,14 @@ document.querySelector('.goToRegister').addEventListener('click', () => {
     showModal(regis)
 })
 
-// ! Register Add New Account
-const loginForm = document.querySelectorAll('form')[0]
-const registerForm = document.querySelectorAll('form')[1]
-
+// ! Login Form
+// const loginForm = document.querySelectorAll('form')[0]
+const login_button = document.querySelector('#login-button')
 const loginUser = document.querySelectorAll('.login-input')[0]
 const loginPassword = document.querySelectorAll('.login-input')[1]
-
 const dataAccount = JSON.parse(localStorage.getItem('Account')) || []
-loginForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+
+function loginMethod() {
     let index = dataAccount.findIndex(item => { return item.password === loginPassword.value && item.name === loginUser.value })
     if (index != -1) {
         loginButton.style.display = 'none'
@@ -41,27 +40,75 @@ loginForm.addEventListener('submit', (e) => {
     } else {
         loginForm.reset()
     }
-})
+}
+// login_button.addEventListener('click', (e) => {
+//     e.preventDefault()
+//     let index = dataAccount.findIndex(item => { return item.password === loginPassword.value && item.name === loginUser.value })
+//     if (index != -1) {
+//         loginButton.style.display = 'none'
+//         document.querySelector('.user-infor').removeAttribute('hidden')
+//         document.querySelector('.user-infor i').setAttribute('hidden', true)
+//         document.querySelector('.user-infor span').innerHTML = `Hello, <strong>${dataAccount[index].name}</strong>`
+//         document.querySelector('.ID-handler').value = dataAccount[index].id
+//         currentStatus = 1
+//     } else {
+//         loginForm.reset()
+//     }
+// })
 
+// ! Register Form
+const registerForm = document.querySelectorAll('form')[1]
 const regisUser = document.querySelectorAll('.regis-input')[0]
 const regisEmail = document.querySelectorAll('.regis-input')[1]
-const regisPassword = document.querySelectorAll('.regis-input')[3]
 const regisAge = document.querySelectorAll('.regis-input')[2]
+const regisPassword = document.querySelectorAll('.regis-input')[3]
 const regisPhone = document.querySelectorAll('.regis-input')[5]
+const validEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm
+function checkUserEmail(email) {
+    let validEmail = dataAccount.find(user => {
+        user.email === email
+        return true
+    })
+    return false
+}
 
-registerForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+function registerMethod() {
     let index = dataAccount.findIndex(item => { return item.email === regisEmail.value })
     if (index == -1 || dataAccount.length < 1) {
-        let user = new User(regisUser.value, regisAge.value,
-            regisEmail.value, regisPassword.value, regisPhone.value)
-        dataAccount.push(user);
-        localStorage.setItem('Account', JSON.stringify(dataAccount))
-        console.log(user);
-        registerForm.reset()
+        if (!checkUserEmail()) {
+            if (validEmail.test(regisEmail.value)) {
+                let user = new User(regisUser.value, regisAge.value,
+                    regisEmail.value, regisPassword.value, regisPhone.value)
+                dataAccount.push(user);
+                localStorage.setItem('Account', JSON.stringify(dataAccount))
+            }
+        }
+        else {
+            alert('Not Good')
+        }
+    } else {
+        alert('Not Good')
     }
-})
-
+}
+// registerForm.addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     let index = dataAccount.findIndex(item => { return item.email === regisEmail.value })
+//     if (index == -1 || dataAccount.length < 1) {
+//         if (regisEmail.value.matches(validEmail) && !checkUserEmail()) {
+//             let user = new User(regisUser.value, regisAge.value,
+//                 regisEmail.value, regisPassword.value, regisPhone.value)
+//             dataAccount.push(user);
+//             localStorage.setItem('Account', JSON.stringify(dataAccount))
+//             console.log(user);
+//             registerForm.reset()
+//         }
+//         else {
+//             alert('Not Good')
+//         }
+//     } else {
+//         alert('Not Good')
+//     }
+// })
 
 // ! Get Product
 const productView = document.querySelector('.product-contain')
@@ -96,23 +143,10 @@ function checkCart(id) {
     return indexCartList = -1
 }
 
-function checkUser() {
+function checkUserInCart() {
     for (let i = 0; i < dataCart.length; i++) {
         if (dataCart[i].userId === document.querySelector('.ID-handler').value) {
             return indexCart = i
-
-        }
-    }
-    return indexCart = -1
-}
-
-function checkCartByUser(id) {
-    let indexUserCart = 0
-    for (let i = 0; i < dataCart.length; i++) {
-        for (const key of dataCart[i]['cartList']) {
-            if (dataCart[i].userId === document.querySelector('.ID-handler').value
-                && key.id === id)
-                return indexCart = i
         }
     }
     return indexCart = -1
@@ -126,12 +160,10 @@ function addToCart(id) {
         return
     } else {
         try {
-            checkUser(id)
+            checkUserInCart(id)
             checkCart(id)
         } catch (error) {
-
         }
-
         if (dataCart.length < 1 || indexCart == -1) {
             listCart.push({
                 id: dataProduct[productIndex].id, name: dataProduct[productIndex].name, price: dataProduct[productIndex].price,
