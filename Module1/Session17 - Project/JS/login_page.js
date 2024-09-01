@@ -5,7 +5,7 @@ const dataAdmin = JSON.parse(localStorage.getItem('Admin')) || []
 let isOnline = localStorage.getItem('isLogin')
 if (isOnline != 'false') {
     showToast('Tài khoản vẫn online, chuyển tới Trang chính')
-    setTimeout(() => { window.location = '../Session17/Pages/home_page.html' }, 2000)
+    setTimeout(() => { window.location = '../Session17 - Project/Pages/home_page.html' }, 2000)
 }
 
 const emailInput = document.getElementById('email')
@@ -24,7 +24,7 @@ function moveToNextPage() {
                 localStorage.setItem('Admin', JSON.stringify(dataAdmin))
                 showToast(`Đăng nhập thành công`)
                 setTimeout(() => {
-                    window.location = '../Session17/Pages/home_page.html'
+                    window.location = '../Session17 - Project/Pages/home_page.html'
                 }, 2000)
 
             } else {

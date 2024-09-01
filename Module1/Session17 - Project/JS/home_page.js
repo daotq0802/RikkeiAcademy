@@ -2,7 +2,7 @@ let dataAdmin = JSON.parse(localStorage.getItem('Admin'))
 // * Check login
 let isOnline = localStorage.getItem('isLogin')
 if (isOnline == 'false' || isOnline == null) {
-    window.location = '../login_page.html'
+    window.location = '../index.html'
 } else {
     document.querySelector('.user-name').innerHTML = `Xin chào, <span>${isOnline}</span>`
 }
@@ -60,7 +60,7 @@ function confirmLogout() {
     localStorage.setItem('isLogin', false)
     localStorage.setItem('Admin', JSON.stringify(dataAdmin))
     showToast('Đã đăng xuất, chuyển tới đăng nhập')
-    setTimeout(() => { window.location = 'index.html' }, 2000)
+    setTimeout(() => { window.location = '../index.html' }, 2000)
 }
 
 // * Toast modal
