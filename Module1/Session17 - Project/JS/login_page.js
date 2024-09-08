@@ -2,10 +2,24 @@ const adminEmail = 'admin@gmail.com'
 const adminPassword = 'admin'
 const dataAdmin = JSON.parse(localStorage.getItem('Admin')) || []
 
-let isOnline = localStorage.getItem('isLogin')
-if (isOnline != 'false') {
-    showToast('Tài khoản vẫn online, chuyển tới Trang chính')
-    setTimeout(() => { window.location = '../Session17 - Project/Pages/home_page.html' }, 2000)
+
+checkLogged()
+function checkLogged() {
+    let isOnline = localStorage.getItem('isLogin')
+
+    if (dataAdmin.length < 0 || isOnline.length < 0 || dataAdmin == null || isOnline == null) {
+        let admin = [{
+            email: adminEmail,
+            password: adminPassword,
+            status: 'offline'
+        }]
+        localStorage.setItem('Admin', JSON.stringify(admin))
+        localStorage.setItem('isLogin', 'false')
+    }
+    if (isOnline != 'false') {
+        showToast('Tài khoản vẫn online, chuyển tới Trang chính')
+        setTimeout(() => { window.location = '../Session17 - Project/Pages/home_page.html' }, 2000)
+    }
 }
 
 const emailInput = document.getElementById('email')
