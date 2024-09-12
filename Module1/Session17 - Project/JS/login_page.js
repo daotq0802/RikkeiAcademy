@@ -7,7 +7,7 @@ checkLogged()
 function checkLogged() {
     let isOnline = localStorage.getItem('isLogin')
 
-    if (dataAdmin.length < 0 || isOnline.length < 0 || dataAdmin == null || isOnline == null) {
+    if (dataAdmin == null || isOnline == null) {
         let admin = [{
             email: adminEmail,
             password: adminPassword,
@@ -18,9 +18,10 @@ function checkLogged() {
     }
     if (isOnline != 'false') {
         showToast('Tài khoản vẫn online, chuyển tới Trang chính')
-        setTimeout(() => { window.location = '../Session17 - Project/Pages/home_page.html' }, 2000)
+        setTimeout(() => { window.location = './Pages/home_page.html' }, 2000)
     }
 }
+
 
 const emailInput = document.getElementById('email')
 const passwordInput = document.getElementById('password')
@@ -38,7 +39,7 @@ function moveToNextPage() {
                 localStorage.setItem('Admin', JSON.stringify(dataAdmin))
                 showToast(`Đăng nhập thành công`)
                 setTimeout(() => {
-                    window.location = '../Session17 - Project/Pages/home_page.html'
+                    window.location = './Pages/home_page.html'
                 }, 2000)
 
             } else {
