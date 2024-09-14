@@ -12,6 +12,7 @@ public class IsTriangle {
         System.out.print("Enter the side c: ");
         int c = sc.nextInt();
         System.out.println("Checking can make a triangle or not?");
+
         if (a + b > c && a + c > b && b + c > a) {
             setTimeout(() -> System.out.println("Can make triangle"), 500);
         } else {
@@ -23,8 +24,8 @@ public class IsTriangle {
         new Thread(() -> {
             try {
                 for (int i = 0; i <= 100; i++) {
-                    System.out.print("\r" + "-".repeat(i) + i + "%");
-                    Thread.sleep(20); // 50 millisecond
+                    System.out.print("\rLoading......" + i + "%");
+                    Thread.sleep(20);
                 }
                 System.out.println();
                 Thread.sleep(delay);
