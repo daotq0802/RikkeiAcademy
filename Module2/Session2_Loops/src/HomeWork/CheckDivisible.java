@@ -7,9 +7,9 @@ public class CheckDivisible {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number : ");
         int num = sc.nextInt();
-        if(num%3==0 && num%5==0){
+        if (num % 3 == 0 && num % 5 == 0) {
             System.out.println("Number " + num + " is Divisible 3 and 5.");
-        }else{
+        } else {
             System.out.println("Number " + num + " is not Divisible 3 and 5.");
         }
     }

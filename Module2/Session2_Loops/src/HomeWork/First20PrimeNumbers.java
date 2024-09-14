@@ -14,7 +14,7 @@ public class First20PrimeNumbers {
                 j++;
             }
             if (count == 2) {
-                System.out.print(i + " ");
+                System.out.print(i + "/t");
                 start++;
             }
             i++;

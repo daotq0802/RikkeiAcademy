@@ -39,7 +39,7 @@ public class ConvertNumberToString {
                 System.out.println("Nine");
                 break;
             default:
-                System.out.println("Invalid number");
+                System.err.println("Invalid number");
                 break;
         }
     }

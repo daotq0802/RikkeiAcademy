@@ -12,7 +12,7 @@ public class ListEvenNumbers {
         System.out.println("List of even numbers from " + num1 + " to " + num2 + " are: ");
         for (int i = num1; i <= num2; i++) {
             if (i % 2 == 0) {
-                System.out.print(i + " ");
+                System.out.print(i + "\t");
             }
         }
     }

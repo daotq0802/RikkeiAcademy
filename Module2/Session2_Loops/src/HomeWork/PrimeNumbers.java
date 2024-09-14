@@ -13,7 +13,7 @@ public class PrimeNumbers {
                 }
             }
             if(count==2){
-                System.out.print(i + " ");
+                System.out.print(i + "\t");
             }
         }
     }

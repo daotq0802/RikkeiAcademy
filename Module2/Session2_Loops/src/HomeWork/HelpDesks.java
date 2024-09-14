@@ -40,7 +40,7 @@ public class HelpDesks {
         } while (true);
     }
 
-    public static void menu(){
+    public static void menu() {
         System.out.println("Our services has:\n1. Check the parity of a number\n2. Check prime number\n3. Check divisible by 3\n4. Exit");
         System.out.print("Which service do you need? ");
     }
