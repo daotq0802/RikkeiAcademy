@@ -25,7 +25,6 @@ public class StudentManagement {
                     students = deleteStudent(students, sc);
                     break;
                 case 5:
-
                     isFinished = true;
                     break;
                 default:
@@ -192,7 +191,7 @@ public class StudentManagement {
             try {
                 for (int i = 0; i <= 100; i++) {
                     System.out.print("\rLoading......" + i + "%");
-                    Thread.sleep(20);
+                    Thread.sleep(delay);
                 }
                 System.out.println();
                 Thread.sleep(delay);
