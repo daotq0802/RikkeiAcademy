@@ -6,7 +6,7 @@ public class StoreManagement {
    public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
       while(true) {
-         System.out.println("******************STORE-MANAGEMENT******************[5 điểm]\n" +
+         System.out.println("******************STORE-MANAGEMENT******************\n" +
                  "1. Quản lý danh mục\n" +
                  "2. Quản lý sản phẩm\n" +
                  "3. Thoát\n");
